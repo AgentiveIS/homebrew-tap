@@ -4,17 +4,17 @@
 class Myagentive < Formula
   desc "Open-source personal AI agent for power users"
   homepage "https://myagentive.ai"
-  version "0.4.0"
+  version "0.4.1"
   license "Elastic-2.0"
 
   on_macos do
-    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.4.0/MyAgentive-v0.4.0-macos.tar.gz"
-    sha256 "047012b4a204e218809da5c130be0021dd7f85c6878953b3f2179e8a39445cbe"
+    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.4.1/MyAgentive-v0.4.1-macos.tar.gz"
+    sha256 "90577fff7c8f289971245b77f4d8195c2951d28376ad1f95b150cf9343bde66b"
   end
 
   on_linux do
-    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.4.0/MyAgentive-v0.4.0-linux-x64.tar.gz"
-    sha256 "ab0cd7571e243034bb27485839ed32e91024365aa4dbce8e763420423a558abe"
+    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.4.1/MyAgentive-v0.4.1-linux-x64.tar.gz"
+    sha256 "920725edd1309ac7e8b34f737806f0695b80af2990a7b87d3eb42392d98de0af"
   end
 
   def install
@@ -34,8 +34,10 @@ class Myagentive < Formula
       To start MyAgentive, run:
         myagentive
 
-      On first run, the setup wizard will create ~/.myagentive/
-      and guide you through configuration.
+      On first run, an interactive setup wizard will guide you through
+      configuring your Telegram bot and web interface password.
+
+      Configuration is saved to: ~/.myagentive/config
 
       For background operation:
         myagentivectl start
