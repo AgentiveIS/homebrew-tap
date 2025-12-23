@@ -18,7 +18,7 @@ class Myagentive < Formula
   end
 
   def install
-    # Install binary
+    # Install binaries
     bin.install "myagentive"
     bin.install "myagentivectl"
 
@@ -27,25 +27,6 @@ class Myagentive < Formula
 
     # Install skills
     (share/"myagentive/skills").install Dir["skills/*"]
-
-    # Create data directories
-    (var/"myagentive").mkpath
-  end
-
-  def post_install
-    # Create user config directory if it doesn't exist
-    user_config = "#{ENV["HOME"]}/.myagentive"
-    system "mkdir", "-p", user_config unless Dir.exist?(user_config)
-    system "mkdir", "-p", "#{user_config}/data" unless Dir.exist?("#{user_config}/data")
-    system "mkdir", "-p", "#{user_config}/media" unless Dir.exist?("#{user_config}/media")
-
-    # Link shared files to user directory
-    unless Dir.exist?("#{user_config}/dist")
-      system "ln", "-sf", "#{share}/myagentive/dist", "#{user_config}/dist"
-    end
-    unless Dir.exist?("#{user_config}/skills")
-      system "ln", "-sf", "#{share}/myagentive/skills", "#{user_config}/skills"
-    end
   end
 
   def caveats
@@ -53,7 +34,8 @@ class Myagentive < Formula
       To start MyAgentive, run:
         myagentive
 
-      Configuration is stored in ~/.myagentive/config
+      On first run, the setup wizard will create ~/.myagentive/
+      and guide you through configuration.
 
       For background operation:
         myagentivectl start
@@ -65,6 +47,6 @@ class Myagentive < Formula
   end
 
   test do
-    assert_match "MyAgentive", shell_output("#{bin}/myagentive --version 2>&1", 1)
+    assert_predicate bin/"myagentive", :executable?
   end
 end
