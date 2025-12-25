@@ -4,17 +4,17 @@
 class Myagentive < Formula
   desc "Open-source personal AI agent for power users"
   homepage "https://myagentive.ai"
-  version "0.4.3"
+  version "0.4.4"
   license "Elastic-2.0"
 
   on_macos do
-    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.4.3/MyAgentive-v0.4.3-macos.tar.gz"
-    sha256 "548fdf6a56067d7bb5db1d5d4258e7e77e08de822ee614cd96c16abdb842f109"
+    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.4.4/MyAgentive-v0.4.4-macos.tar.gz"
+    sha256 "e702671be1a6af86b1266f97148b28faf4456c6ef3ebd596670c256c471c5193"
   end
 
   on_linux do
-    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.4.3/MyAgentive-v0.4.3-linux-x64.tar.gz"
-    sha256 "4517a3389da902a7bbfcb752f99a51f02c7ef697bc6e1aed05f03fc6dd76cada"
+    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.4.4/MyAgentive-v0.4.4-linux-x64.tar.gz"
+    sha256 "c9cf885b5cbb1f9b83a0a5b62b5fa92a3cbf0059d725514f6c7ee959d301f9b8"
   end
 
   def install
