@@ -4,17 +4,17 @@
 class Myagentive < Formula
   desc "Open-source personal AI agent for power users"
   homepage "https://myagentive.ai"
-  version "0.5.7"
+  version "0.5.8"
   license "Elastic-2.0"
 
   on_macos do
-    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.5.7/MyAgentive-v0.5.7-macos.tar.gz"
-    sha256 "e069830fb7ac258cea9493de88458ca9ae187e62ef682cdb0a06c3c6a160197c"
+    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.5.8/MyAgentive-v0.5.8-macos.tar.gz"
+    sha256 "c45bc880d509853ec5fe4de2da0eb8f65ba6d0829646b629049556d1df04a890"
   end
 
   on_linux do
-    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.5.7/MyAgentive-v0.5.7-linux-x64.tar.gz"
-    sha256 "a6a4074be034a54856b8437f9e93e46c64da75e9fb200f2352bd9b37d2d693c2"
+    url "https://github.com/AgentiveIS/MyAgentive/releases/download/v0.5.8/MyAgentive-v0.5.8-linux-x64.tar.gz"
+    sha256 "a772263f22f92fd3897d52c7aab2b1d5fc8b1e4c42e37b5587dae346f8090a70"
   end
 
   def install
@@ -26,7 +26,7 @@ class Myagentive < Formula
     (share/"myagentive/dist").install Dir["dist/*"]
 
     # Install skills
-    (share/"myagentive/skills").install Dir["skills/*"]
+    (share/"myagentive/skills").install Dir[".claude/skills/*"]
   end
 
   def caveats
